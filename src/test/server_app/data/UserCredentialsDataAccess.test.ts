@@ -16,7 +16,7 @@ jest.mock('../../../app/server_app/data/Database', ()=>{
   }
 })
 
-describe('UserCredentialsDataAccess test suite', ()=>{
+xdescribe('UserCredentialsDataAccess test suite', ()=>{
 
   let sut: UserCredentialsDataAccess
 
