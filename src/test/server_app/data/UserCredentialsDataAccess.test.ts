@@ -1,11 +1,11 @@
-import { DataBase } from "../../../app/server_app/data/DataBase";
+import { DataBase } from "../../../../src/app/server_app/data/DataBase";
 import { UserCredentialsDataAccess } from "../../../app/server_app/data/UserCredentialsDataAccess"
 import { Account } from "../../../app/server_app/model/AuthModel";
 
 const insertMock = jest.fn()
 const getByMock = jest.fn()
 
-jest.mock('../../../app/server_app/data/Database', ()=>{
+jest.mock('../../../../src/app/server_app/data/DataBase', ()=>{
   return {
     DataBase : jest.fn().mockImplementation(() => {
       return {
@@ -16,7 +16,7 @@ jest.mock('../../../app/server_app/data/Database', ()=>{
   }
 })
 
-xdescribe('UserCredentialsDataAccess test suite', ()=>{
+describe('UserCredentialsDataAccess test suite', ()=>{
 
   let sut: UserCredentialsDataAccess
 
@@ -42,8 +42,6 @@ xdescribe('UserCredentialsDataAccess test suite', ()=>{
     insertMock.mockResolvedValueOnce(someId);
 
     const actualId = await sut.addUser(someAccount);
-
-    console.log(actualId)
 
     expect(actualId).toBe(someId);
     expect(insertMock).toHaveBeenCalledWith(someAccount)
