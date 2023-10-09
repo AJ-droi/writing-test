@@ -48,6 +48,6 @@ describe('custom matchers test', ()=>{
     
     it('check for valid reservation', ()=>{
         expect(someReservation).toBeValidReservation()
-        expect(someReservation).toHaveUser('someOtherUser')
+        expect(someReservation).toHaveUser('someUser')
     })
 })
