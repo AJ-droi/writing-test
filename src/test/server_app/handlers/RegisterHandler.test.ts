@@ -64,7 +64,6 @@ describe('RegisterHandler test suite', ()=>{
         expect(responseMock.write).toBeCalledWith(
             JSON.stringify({
                 userId:someId
-        
         }))
     })
 })
